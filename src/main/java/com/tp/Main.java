@@ -11,7 +11,6 @@ public class Main {
         //On demande le bean notificationService
         NotificationService service = context.getBean(NotificationService.class);
 
-        //On l'utilise
-        service.notifyUser("Bonjour Spring !");
+        service.notifyUser("Injection réussie");
     }
 }
