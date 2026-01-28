@@ -7,11 +7,15 @@ public class NotificationService {
 
     private MessageSender sender;
 
-    public NotificationService(MessageSender sender) {
+    //constructeur vide
+    public NotificationService() {
+    }
+
+    // Injection par Setter : Spring appellera cette méthode après la création de l'objet
+    public void setSender(MessageSender sender) {
         this.sender = sender;
     }
     public void notifyUser(String msg) {
         sender.send(msg);
     }
-
 }

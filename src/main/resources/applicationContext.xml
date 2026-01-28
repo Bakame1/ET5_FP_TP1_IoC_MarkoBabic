@@ -4,9 +4,11 @@
        xsi:schemaLocation="
  http://www.springframework.org/schema/beans
  http://www.springframework.org/schema/beans/spring-beans.xsd">
+
     <bean id="emailSender" class="com.tp.EmailSender"/>
-    <bean id="notificationService"
-          class="com.tp.NotificationService">
-        <constructor-arg ref="emailSender"/>
+    <bean id="smsSender" class="com.tp.SmsSender"/>
+
+    <bean id="notificationService" class="com.tp.NotificationService">
+        <property name="sender" ref="smsSender"/>
     </bean>
 </beans>
